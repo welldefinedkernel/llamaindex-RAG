@@ -20,7 +20,15 @@ Before implementing:
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-## 3. Surgical Changes
+## 3. Use Existing Dependencies
+
+**Prefer proven library functionality already available in this repository.**
+
+- Before writing a custom implementation, check the dependencies declared in `pyproject.toml` for suitable existing functionality.
+- When a declared dependency provides the required functionality, use its public API instead of reimplementing an equivalent solution.
+- Do not add a new dependency or force an unsuitable library solely to satisfy this rule.
+
+## 4. Surgical Changes
 
 **Touch only what you must. Clean up only your own mess.**
 
@@ -36,7 +44,7 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
-## 4. Goal-Driven Execution
+## 5. Goal-Driven Execution
 
 **Define success criteria. Loop until verified.**
 
