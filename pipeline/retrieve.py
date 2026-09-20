@@ -14,7 +14,7 @@ class Retriever:
     def _embed_query(self, query: str) -> list[float]:
         return self.embed_model.model.encode(
             query,
-            prompt_name="web_search_query",
+            prompt_name="query",
             normalize_embeddings=True
         ).tolist()
 
