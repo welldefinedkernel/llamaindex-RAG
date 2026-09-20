@@ -1992,7 +1992,7 @@ wheels = [
 
 [[package]]
 name = "llamaindex-foundational-retrieval"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "chromadb" },
@@ -2045,7 +2045,7 @@ requires-dist = [
     { name = "llama-index-readers-file", specifier = ">=0.6.0" },
     { name = "llama-index-readers-huggingface-fs", specifier = ">=0.5.0" },
     { name = "llama-index-vector-stores-milvus", specifier = ">=1.1.0" },
-    { name = "mcp", specifier = ">=1.27.1" },
+    { name = "mcp", specifier = ">=2.2.0" },
     { name = "milvus-lite", specifier = "==2.5.2rc1" },
     { name = "numpy", specifier = ">=2.4.4" },
     { name = "ollama", specifier = ">=0.6.2" },

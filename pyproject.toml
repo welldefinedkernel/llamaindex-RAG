@@ -24,7 +24,7 @@ dependencies = [
     "llama-index-readers-file>=0.6.0",
     "llama-index-readers-huggingface-fs>=0.5.0",
     "llama-index-vector-stores-milvus>=1.1.0",
-    "mcp>=1.27.1",
+    "mcp>=2.2.0",
     "milvus-lite==2.5.2rc1",
     "numpy>=2.4.4",
     "ollama>=0.6.2",
