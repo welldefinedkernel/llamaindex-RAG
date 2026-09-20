@@ -43,7 +43,7 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["data", "models", "pipeline"]
+packages = ["data", "mcp_server", "models", "pipeline"]
 
 [tool.commitizen]
 name = "cz_conventional_commits"
