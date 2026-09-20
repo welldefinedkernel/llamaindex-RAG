@@ -6,9 +6,6 @@ dist/
 wheels/
 *.egg-info
 
-# DeepEval
-.deepeval/
-
 # Virtual environments
 .venv/
 
