@@ -1,11 +1,13 @@
-from llama_index.core.vector_stores.types import VectorStoreQuery
-from llama_index.vector_stores.milvus import MilvusVectorStore
+from llama_index.core.vector_stores.types import (
+    BasePydanticVectorStore,
+    VectorStoreQuery,
+)
 
 from models.embedder import Embedder
 
 
 class Retriever:
-    def __init__(self, embed_model: Embedder, vector_store: MilvusVectorStore) -> None:
+    def __init__(self, embed_model: Embedder, vector_store: BasePydanticVectorStore) -> None:
         self.embed_model = embed_model
         self.vector_store = vector_store
 

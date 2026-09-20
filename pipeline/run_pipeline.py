@@ -2,15 +2,20 @@ from functools import cache
 
 from models.embedder import Embedder
 from pipeline.retrieve import Retriever
-from pipeline.vector_db import load_vector_store
+from pipeline.vector_db import load_milvus_vector_store, load_neo4j_vector_store
 
 
 @cache
 def _get_retriever() -> Retriever:
-    embedder = Embedder(embed_model="microsoft/harrier-oss-v1-0.6b")
-    vector_store = load_vector_store(
-        db_path="http://localhost:19530",
-        collection_name="HID_docs"
+    embedder = Embedder(embed_model="intfloat/multilingual-e5-small")
+    # vector_store = load_milvus_vector_store(
+    #     db_path="http://localhost:19530",
+    #     collection_name="HID_docs"
+    # )
+    vector_store = load_neo4j_vector_store(
+        url="bolt://localhost:7687",
+        username="neo4j",
+        password="neo4jneo4j"
     )
     return Retriever(
         embed_model=embedder,
