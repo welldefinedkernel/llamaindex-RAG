@@ -1,6 +1,8 @@
 from llama_index.core.vector_stores.types import VectorStoreQuery
 from llama_index.vector_stores.milvus import MilvusVectorStore
+
 from models.embedder import Embedder
+
 
 class Retriever:
     def __init__(self, embed_model: Embedder, vector_store: MilvusVectorStore) -> None:
@@ -9,7 +11,7 @@ class Retriever:
 
     def _embed_query(self, query: str) -> list[float]:
         return self.embed_model.model.encode(
-            query, 
+            query,
             prompt_name="web_search_query",
             normalize_embeddings=True
         ).tolist()
