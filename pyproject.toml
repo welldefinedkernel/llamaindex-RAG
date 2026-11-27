@@ -1,13 +1,13 @@
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.13.10,<0.14"]
+build-backend = "uv_build"
 
 [project]
 name = "llamaindex-foundational-retrieval"
 version = "0.2.1"
 description = "Llamaindex foundational retrieval system"
 readme = "README.md"
-requires-python = ">=3.13,<3.14"
+requires-python = ">=3.14"
 dependencies = [
     "chromadb>=1.5.8",
     "datasets>=4.8.4",
@@ -32,24 +32,11 @@ dependencies = [
     "pip>=26.0.1",
     "pymilvus>=2.6.12",
     "sentence-transformers>=5.4.1",
-    "setuptools>=82.0.1",
     "tqdm>=4.67.3",
     "transformers>=5.5.4",
     "unstructured[all-docs]>=0.17.0",
 ]
 
-[dependency-groups]
-dev = [
-    "commitizen>=3.29.0",
-]
-
-[tool.setuptools]
-packages = ["data", "mcp_server", "models", "pipeline"]
-
-[tool.commitizen]
-name = "cz_conventional_commits"
-version_provider = "pep621"
-tag_format = "v$version"
-update_changelog_on_bump = true
-major_version_zero = true
-bump_message = "bump: version $current_version -> $new_version [skip ci]"
+[tool.uv.build-backend]
+module-name = ["data", "mcp_server", "models", "pipeline"]
+module-root = ""
